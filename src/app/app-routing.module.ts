@@ -5,8 +5,9 @@ import { AppComponent } from './app.component';
 import { CinemasComponent } from './cinemas/cinemas.component';
 
 const routes: Routes = [
-  { path: 'cinemas', component: CinemasComponent },
-  { path: '', component: AppComponent }
+  { path: 'cinemas', loadChildren: () => import('./cinemas/cinemas.module').then(m => m.CinemasModule) },
+  { path: 'games', loadChildren: () => import('./games/games.module').then(m => m.GamesModule) },
+  { path: 'events', loadChildren: () => import('./events/events.module').then(m => m.EventsModule) }
 ];
 
 @NgModule({
