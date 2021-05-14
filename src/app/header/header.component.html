@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-dark border-primary">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Brand" src="assets/images/header_icon.png">
+      </a>
+    </div>
+    <div class="navbar-header">
+      <h1 class="navbar-text text-white">Show Time</h1>
+    </div>
+    <!-- <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav> -->
+    <div class="navbar-header  navbar-right">
+        <button *ngIf="!loginService.isAuthenticated" type="button" class="btn btn-primary navbar-btn" routerLink="/login">Sign in</button>
+        <button *ngIf="loginService.isAuthenticated" type="button" class="btn btn-primary navbar-btn" (click)="signout()">Sign out</button>
+    </div>
+  </div>
+</nav>

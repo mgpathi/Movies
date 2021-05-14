@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+//import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-bootstrapmodal',
@@ -11,7 +11,7 @@ export class BootstrapmodalComponent implements OnInit {
   @Input() fromParent : any;
 
   constructor(
-    public activeModal: NgbActiveModal
+   // public activeModal: NgbActiveModal
   ) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class BootstrapmodalComponent implements OnInit {
   }
 
   closeModal(sendData) {
-    this.activeModal.close(sendData);
+   // this.activeModal.close(sendData);
   }
 
 }

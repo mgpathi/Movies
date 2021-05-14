@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -11,11 +10,18 @@ import { CinemaService } from './commons/cinema.service';
 import { MyHttpInterceptor } from './commons/my-http.interceptor';
 import { BootstrapmodalComponent } from './commons/bootstrapmodal/bootstrapmodal.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     BootstrapmodalComponent,
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   entryComponents:[
     BootstrapmodalComponent
@@ -26,9 +32,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     HttpClientModule,
     NgxSpinnerModule,
-    NgbModule.forRoot()
   ],
-  providers: [CinemaService,{
+  providers: [CinemaService,LoginService, {
     provide: HTTP_INTERCEPTORS,
     useClass: MyHttpInterceptor,
     multi: true,

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbDatepicker, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { BootstrapmodalComponent } from '../commons/bootstrapmodal/bootstrapmodal.component';
 import { CinemaService } from '../commons/cinema.service';
 
@@ -12,7 +11,7 @@ export class CinemasComponent implements OnInit {
   selDate:any;
   constructor(
     private service : CinemaService,
-    private modalService: NgbModal
+    //private modalService: NgbModal
     
     ) { }
 
@@ -36,27 +35,27 @@ export class CinemasComponent implements OnInit {
     })
   }
 
-  openModal() {
-    const modalRef = this.modalService.open(BootstrapmodalComponent,
-      {
-        //scrollable: true,
-        windowClass: 'myCustomModalClass',
-        keyboard: false,
-        backdrop: 'static'
-      });
+  // openModal() {
+  //   const modalRef = this.modalService.open(BootstrapmodalComponent,
+  //     {
+  //       //scrollable: true,
+  //       windowClass: 'myCustomModalClass',
+  //       keyboard: false,
+  //       backdrop: 'static'
+  //     });
 
-    let data = {
-      prop1: 'Some Data',
-      prop2: 'From Parent Component',
-      prop3: 'This Can be anything'
-    }
+  //   let data = {
+  //     prop1: 'Some Data',
+  //     prop2: 'From Parent Component',
+  //     prop3: 'This Can be anything'
+  //   }
 
-    modalRef.componentInstance.fromParent = data;
-    modalRef.result.then((result) => {
-      console.log(result);
-    }, (reason) => {
-      console.log(reason);
-    });
-  }
+  //   modalRef.componentInstance.fromParent = data;
+  //   modalRef.result.then((result) => {
+  //     console.log(result);
+  //   }, (reason) => {
+  //     console.log(reason);
+  //   });
+  // }
 
 }
