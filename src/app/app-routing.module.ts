@@ -8,8 +8,8 @@ import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cinemas', loadChildren: './cinemas/cinemas.module#CinemasModule'},
-  { path: 'games', loadChildren: () => import('./games/games.module').then(m => m.GamesModule) },
-  { path: 'events', loadChildren: () => import('./events/events.module').then(m => m.EventsModule) }
+  { path: 'games', loadChildren: './games/games.module#GamesModule') },
+  { path: 'events', loadChildren: './events/events.module#EventsModule') }
 ];
 
 @NgModule({
