@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
+import { ApplicationInsights } from '@microsoft/applicationinsights-web';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +18,14 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const appInsights = new ApplicationInsights({ config: {
+      //instrumentationKey: 'YOUR_INSTRUMENTATION_KEY_GOES_HERE'
+      /* ...Other Configuration Options... */
+      instrumentationKey:'a3747ae2-4443-47dd-90d3-1012e9482c5d',
+     // ingestionEndpoint : 'https://southcentralus-0.in.applicationinsights.azure.com/'
+    } });
+    appInsights.loadAppInsights();
+    appInsights.trackPageView(); 
   }
 
   signin() {
