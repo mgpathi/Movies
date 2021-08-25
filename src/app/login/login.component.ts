@@ -29,7 +29,12 @@ export class LoginComponent implements OnInit {
       //sessionStorage.clear();
       
     }, 3000);
-    this.router.navigate(['/cinemas']);
+    this.loginService.loginUser().subscribe((res:any)=>{
+      console.log("Inside of success");
+    },(error:any)=>{
+      console.log("Inside of Error");
+    });
+    //this.router.navigate(['/cinemas']);
   }
 
 }
