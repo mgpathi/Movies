@@ -24,8 +24,7 @@ jobs:
     name: Build and Deploy Job
 
     steps:
-      -run: |
-        echo "Manual deployment, justification ${{ github.event.inputs.justification }}!"
+      - run: echo "Manual deployment, justification ${{ github.event.inputs.justification }}!"
 
       - uses: actions/checkout@v2
 
