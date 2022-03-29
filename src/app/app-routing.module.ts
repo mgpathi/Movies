@@ -4,9 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CinemasComponent } from './cinemas/cinemas.component';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
+  { path: 'signin', component: LoginComponent },
+  { path: 'signup', component: RegisterComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'cinemas', loadChildren: './cinemas/cinemas.module#CinemasModule'},
   { path: 'games', loadChildren: './games/games.module#GamesModule'},
   { path: 'events', loadChildren: './events/events.module#EventsModule'}
