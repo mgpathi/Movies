@@ -9,11 +9,16 @@ import { CinemaService } from '../commons/cinema.service';
 })
 export class CinemasComponent implements OnInit {
   selDate:any;
+  now:Date;
   constructor(
     private service : CinemaService,
     //private modalService: NgbModal
     
-    ) { }
+    ) {
+      setInterval(()=>{
+        this.now = new Date();
+      },1)
+     }
 
   ngOnInit() {
   }

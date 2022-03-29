@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     },(error:any)=>{
       console.log("Inside of Error");
     });
-    //this.router.navigate(['/cinemas']);
+    this.router.navigate(['/dashboard']);
   }
 
 }
